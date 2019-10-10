@@ -73,26 +73,14 @@ class TicTacToe {
 
     noMoreTurns() {
         let boo = true;
-        this.matrix.flat().forEach(marker => {
+        let arr = [].concat(...this.matrix); // сам бы не додумался... это красиво
+        arr.forEach(marker => {
             if (marker == null) {
                 return boo = false; 
             };
         });
     return boo;
     }
-
-    //     let boo = 0;
-    //     this.matrix.forEach(rows => {
-    //         rows.forEach(marker => {
-    //         if (marker != null) {
-    //             boo == true;
-    //         } else {
-    //             boo == false;
-    //         };
-    //     });
-    //     }); 
-    //     return boo;
-    // }
 
     isDraw() {
         if (this.getWinner() == null && this.noMoreTurns() == true ) {
